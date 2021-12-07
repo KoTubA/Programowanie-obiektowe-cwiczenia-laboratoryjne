@@ -1,0 +1,4 @@
+Klasa Prostokat
+Pole: 42
+Klasa Pracownik:
+Pensja: 5000
