@@ -12,6 +12,11 @@ public:
         dvalue = (double)ap/bp;
     };
 
+    operator double()
+    {
+        return this->dvalue;
+    }
+
     Fraction&operator=(Fraction &drugi) {
         if (this == &drugi)
             return *this;
@@ -48,6 +53,8 @@ int main()
     x1 = x2;
     cin >> x2;
     cout << x2 << endl;
+
+    std::cout << "Rzutowanie ulamka na dobule:"  << double(ulamek);
 
     return 0;
 }
