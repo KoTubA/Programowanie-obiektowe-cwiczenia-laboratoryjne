@@ -190,13 +190,16 @@ std::ostream & operator<<(std::ostream & output, SamochodElektryczny &x) {
 
 int SamochodElektryczny::counter = 0;
 int main() {
-    PojazdSilnikowy *s1 = new Samochod("M3", 2005, 40, 10);
+    PojazdSilnikowy *s1[0];
+    s1[0] = new SamochodElektryczny("Tesla", 2020, 500);
     Samochod *s2 = new Samochod("M2", 2010, 45, 10);
     SamochodElektryczny *s3 = new SamochodElektryczny("Tesla", 2015, 450);
 
     std::cout << "Pojazd silinikowy:" << std::endl;
     std::cout << "------------------" << std::endl;
-    s1->startEngine();
+    s1[0]->startEngine();
+    std::cout << "------------------" << std::endl;
+    s1[0]->drive();
     std::cout << "------------------" << std::endl;
 
     std::cout << "Pojazd spalinowy:" << std::endl;
