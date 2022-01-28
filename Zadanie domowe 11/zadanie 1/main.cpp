@@ -2,7 +2,9 @@
 
 class RefuelCarException {
 public:
-    char *what() { return "Za duzo chcesz zatankowac!";};
+    void what() {
+        std::cout << "Za duzo chcesz zatankowac!" << std::endl;
+    };
 };
 
 class Silnik {
@@ -171,7 +173,7 @@ public:
 
     static void printObjCount()
     {
-        std::cout << "Count:" << counter<< "\n";
+        std::cout << "Count: " << counter<< "\n";
     }
 
     friend std::ostream & operator<<(std::ostream &, SamochodElektryczny &);
@@ -210,7 +212,7 @@ int main() {
         s2->refuelCar();
     }
     catch (RefuelCarException &e) {
-        std::cout << e.what() << std::endl;
+        e.what();
     }
     std::cout << "------------------" << std::endl;
     std::cout << *s2;
@@ -226,7 +228,7 @@ int main() {
     std::cout << "------------------" << std::endl;
     std::cout << *s3;
     std::cout << "------------------" << std::endl;
-    std::cout << SamochodElektryczny::counter << std::endl;
+    SamochodElektryczny::printObjCount();
     std::cout << "------------------" << std::endl;
     return 0;
 }
