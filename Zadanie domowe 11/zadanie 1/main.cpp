@@ -67,11 +67,6 @@ class PojazdSilnikowy {
             }
         }
 
-        void changeGear(int g) {
-            state.changeGear(g);
-            std::cout << "Zmieniono bieg na: "<< state.getGear() << std::endl;
-        }
-
         virtual void drive() = 0;
 };
 
